@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -6,9 +7,8 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Source+Code+Pro&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Festive&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Rampart+One&display=swap");
 html {
   line-height: 1.15;
   /* 1 */
@@ -345,16 +345,20 @@ template {
   display: none;
 }
 
-.font-Roboto {
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+@font-face {
+  font-family: 'Lobster';
+  src: url("../src/fonts/Lobster_1_4.eot");
+  src: local("☺"), url("../src/fonts/Lobster_1_4.woff") format("woff"), url("../src/fonts/Lobster_1_4.ttf") format("truetype"), url("../src/fonts/Lobster_1_4.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-Lobster {
+  font-family: 'Lobster', Arial, Helvetica, sans-serif;
 }
 
 .font-Festive {
   font-family: 'Festive', Arial, Helvetica, sans-serif;
-}
-
-.font-Rampart {
-  font-family: 'Rampart One', Arial, Helvetica, sans-serif;
 }
 
 html {
@@ -366,11 +370,13 @@ html {
   font-family: "Inter", sans-serif;
   color: #1E1E1E;
   padding-bottom: 32px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .p-ui .main-container {
   max-width: 1200px;
-  min-width: 360px;
+  min-width: 320px;
   margin: 0 auto;
   padding: 16px;
 }
@@ -907,52 +913,52 @@ html {
 }
 
 .p-ui h1 {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   font-weight: 700;
-  margin: 32px 0 0 0;
+  margin: 2.8rem 0 0 0;
 }
 
 .p-ui h2 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 700;
-  margin: 24px 0 0 0;
+  margin: 2.2rem 0 0 0;
 }
 
 .p-ui h3 {
   font-size: 1.4rem;
   font-weight: 700;
-  margin: 24px 0 0 0;
+  margin: 1.8rem 0 0 0;
 }
 
 .p-ui h4 {
   font-size: 1.2rem;
   font-weight: 700;
   color: #6D6D6D;
-  margin: 20px 0 0 0;
+  margin: 1.2rem 0 0 0;
 }
 
 .p-ui h5 {
   font-size: 1rem;
   font-weight: 700;
   color: #6D6D6D;
-  margin: 20px 0 0 0;
+  margin: 1rem 0 0 0;
 }
 
 .p-ui p {
   font-size: 1rem;
-  line-height: 28px;
-  margin: 8px 0 0 0;
+  line-height: 1.5;
+  margin: .5rem 0 0 0;
 }
 
 .p-ui ul {
   list-style-type: none;
   font-size: 1rem;
-  margin: 12px 0 0 0;
+  margin: .6rem 0 0 0;
 }
 
 .p-ui ul li {
   line-height: 1.2rem;
-  margin-top: 8px;
+  margin-top: .5rem;
 }
 
 .p-ui ul li::before {
@@ -960,32 +966,60 @@ html {
   color: #E63946;
   font-weight: bold;
   display: inline-block;
-  width: 18px;
-  margin-left: -18px;
+  width: 1.1rem;
+  margin-left: -1.1rem;
+}
+
+.p-ui ul.no-mark {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.p-ui ul.no-mark li::before {
+  display: none;
+}
+
+.p-ui ol {
+  font-size: 1rem;
+  margin: .6rem 0 0 0;
+  counter-reset: item;
+  list-style-type: none;
+}
+
+.p-ui ol li {
+  line-height: 1.2rem;
+  margin-top: .5rem;
+}
+
+.p-ui ol li::before {
+  content: counter(item) ". ";
+  counter-increment: item;
+  color: #E63946;
+  font-weight: bold;
+  display: inline-block;
+  width: 1.1rem;
+  margin-left: -1.1rem;
 }
 
 .p-ui a {
   text-decoration: none;
-  color: #6D6D6D;
+  color: #1E1E1E;
   border-bottom: 2px dashed #E63946;
-  -webkit-transition: all .2s;
-  -o-transition: all .2s;
-  transition: all .2s;
   line-height: 1.2rem;
 }
 
 .p-ui a:hover {
-  color: #1E1E1E;
-  border-bottom: 3px solid #E63946;
-  -webkit-transition: all .2s;
-  -o-transition: all .2s;
-  transition: all .2s;
+  border-bottom: 2px solid #E63946;
+}
+
+.p-ui em {
+  color: #E63946;
 }
 
 .p-ui blockquote {
   font-size: 1.1rem;
-  margin: 16px 16px 0 48px;
-  padding: 32px 8px 32px 16px;
+  margin: 1rem 1rem 0 3rem;
+  padding: 2rem .5rem 2rem 1rem;
   font-family: "Inter", sans-serif;
   font-weight: 700;
   line-height: 1.1rem;
@@ -995,6 +1029,7 @@ html {
 
 .p-ui pre {
   font-family: "Source Code Pro", monospace;
+  white-space: pre-wrap;
 }
 
 .p-ui code {
@@ -1016,12 +1051,12 @@ html {
 }
 
 .p-ui code .code-margin {
-  margin: 0 0 0 32px;
+  margin: 0 0 0 2rem;
 }
 
 .p-ui .code-block {
   display: block;
-  margin: 12px 0 0 0;
+  margin: .6rem 0 0 0;
 }
 
 .p-ui .img-block {
@@ -1048,10 +1083,19 @@ html {
   border-collapse: collapse;
   border: 1px solid #a08f9050;
   font-size: .9rem;
+  overflow-x: auto;
+  display: block;
 }
 
 .p-ui table thead {
-  background-color: #a08f9050;
+  background-color: #eee;
+  display: table;
+  width: 100%;
+}
+
+.p-ui table tbody {
+  display: table;
+  width: 100%;
 }
 
 .p-ui table caption {
@@ -1059,10 +1103,115 @@ html {
   padding: 4px;
   font-weight: 700;
   text-align: left;
+  width: 60%;
+  display: block;
 }
 
 .p-ui table th, .p-ui table td {
   padding: 18px;
+}
+
+button {
+  padding: .8rem 1.4rem;
+  border-radius: .5rem;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+button:hover {
+  -webkit-box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+          box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.primary-btn {
+  color: #fff;
+  background-color: #E63946;
+  font-weight: 300;
+}
+
+.secondary-btn {
+  color: #fff;
+  background-color: #1E1E1E;
+}
+
+.neutral-btn {
+  color: #6D6D6D;
+  background-color: #dddddd;
+}
+
+button.outline {
+  padding: .7rem 1.4rem;
+}
+
+button.outline:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background-color: #f1f1f1 !important;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.primary-btn.outline {
+  background-color: transparent;
+  color: #E63946;
+  border: 1px solid #E63946;
+}
+
+.secondary-btn.outline {
+  background-color: transparent;
+  color: #1E1E1E;
+  border: 1px solid #1E1E1E;
+}
+
+.neutral-btn.outline {
+  background-color: transparent;
+  color: #9C9C9C;
+  border: 1px solid #9C9C9C;
+}
+
+.p-ui-tabs {
+  margin: 1rem auto;
+  min-height: 10rem;
+}
+
+.p-ui-tabs .t-titles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.p-ui-tabs .t-titles .tab-title {
+  padding: 1rem;
+  border-top: 4px solid #cccccc;
+  border-right: 1px solid #cccccc;
+  cursor: pointer;
+}
+
+.p-ui-tabs .t-titles .active-tab {
+  border-top: 4px solid #E63946;
+  font-weight: 700;
+  background-color: #eee;
+}
+
+.p-ui-tabs .t-contents {
+  position: relative;
+}
+
+.p-ui-tabs .t-contents .tab-content {
+  display: none;
+  background-color: #eee;
+  padding: 2rem;
+}
+
+.p-ui-tabs .t-contents .show-content {
+  z-index: 100;
+  display: block;
 }
 
 .form-area {
@@ -1165,3 +1314,4 @@ html {
 .extra-padding {
   padding: 20px 0 0 30px;
 }
+/*# sourceMappingURL=penguins-ui.css.map */

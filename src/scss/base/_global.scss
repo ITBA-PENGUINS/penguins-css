@@ -1,0 +1,10 @@
+html {
+    scroll-behavior: smooth;
+    font-size: $basic-font-size;
+}
+.p-ui {
+    font-family: $main-font;
+    color: $text-black;
+    padding-bottom: 32px;
+    box-sizing: border-box;
+}

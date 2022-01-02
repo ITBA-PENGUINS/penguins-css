@@ -1,0 +1,153 @@
+
+.p-ui {
+    //headers
+    h1 {
+        font-size: 2.4rem;
+        font-weight: 700;
+        margin: 2.8rem 0 0 0;
+    }
+    h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 2.2rem 0 0 0;
+    }
+    h3 {
+        font-size: 1.4rem;
+        font-weight: 700;
+        // color: $medium-grey;
+        margin: 1.8rem 0 0 0;
+    }
+    h4 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: $medium-grey;
+        margin: 1.2rem 0 0 0;
+    }
+    h5 {
+        font-size: 1rem;
+        font-weight: 700;
+        color: $medium-grey;
+        margin: 1rem 0 0 0;
+    }
+
+    //paragraph
+    p {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin: .5rem 0 0 0;
+    }
+
+    //ul
+    ul {
+        list-style-type: none;
+        font-size: 1rem;
+        margin: .6rem 0 0 0;
+
+        li {
+            line-height: 1.2rem;
+            margin-top: .5rem;
+            &::before {
+                content: "\2022";
+                color: $accent-red;
+                font-weight: bold;
+                display: inline-block;
+                width: 1.1rem;
+                margin-left: -1.1rem;
+            }
+        }
+    }
+    ul.no-mark {
+        list-style-type: none;
+        padding-left: 0;
+        li {
+            &::before {
+                display: none;
+            }
+        }
+        
+    }
+
+    //ol
+    ol {
+        
+        font-size: 1rem;
+        margin: .6rem 0 0 0;
+        counter-reset: item;
+        list-style-type: none;
+
+        li {
+            line-height: 1.2rem;
+            margin-top: .5rem;
+            &::before {
+                content: counter(item) ". ";
+                counter-increment: item;
+                color: $accent-red;
+                font-weight: bold;
+                display: inline-block;
+                width: 1.1rem;
+                margin-left: -1.1rem;
+            }
+        }
+    }
+
+    //link
+    a {
+        text-decoration: none;
+        color: $text-black;
+        border-bottom: 2px dashed $accent-red;
+        line-height: 1.2rem;
+
+        &:hover {
+            border-bottom: 2px solid $accent-red;
+        }
+    }
+    
+    em {
+        color: $accent-red;
+    }
+
+    //blockqoute
+    blockquote {
+        font-size: 1.1rem;
+        margin: 1rem 1rem 0 3rem;
+        padding: 2rem .5rem 2rem 1rem;
+        font-family: $main-font;
+        font-weight: 700;
+        line-height: 1.1rem;
+        color: $text-black;
+        border-left: 10px solid $accent-red;
+    }
+
+    //code
+    pre {
+        font-family: $code-font;
+        white-space: pre-wrap;
+    }
+    code {
+        font-family: $code-font;
+        font-size: 1rem;
+        color: $code-blue;
+
+        .code-string {
+            color: $accent-red;
+        }
+        .code-tag-inner {
+            color: $light-grey;
+        }
+        .code-class {
+            color: #038088;
+        }
+        .code-margin {
+            margin: 0 0 0 2rem;
+        }
+    }
+    .code-block {
+        display: block;
+        margin: .6rem 0 0 0;
+        // overflow-x: scroll;
+    }
+    
+}
+
+
+
